@@ -2,13 +2,7 @@
 	import '../app.css';
 	let { children } = $props();
 
-	const pages = [
-		{ title: 'Inicio', href: '/' },
-		{ title: 'Svelte Básico', href: '/basic-svelte' },
-		{ title: 'Svelte Avanzado', href: '/advanced-svelte' },
-		{ title: 'SvelteKit Básico', href: '/basic-sveltekit' },
-		{ title: 'SvelteKit Avanzado', href: '/advanced-sveltekit' }
-	];
+	const pages = [{ title: 'Inicio', href: '/' }];
 </script>
 
 <section class="flex min-h-screen flex-col">
