@@ -2,7 +2,10 @@
 	import '../app.css';
 	let { children } = $props();
 
-	const pages = [{ title: 'Inicio', href: '/' }];
+	const pages = [
+		{ title: 'Inicio', href: '/' },
+		{ title: 'Svelte Básico', href: '/basic-svelte' }
+	];
 </script>
 
 <section class="flex min-h-screen flex-col">
@@ -10,7 +13,7 @@
 		<h1 class="text-center text-4xl font-bold text-cyan-400">Aprendiendo SvelteKit</h1>
 	</header>
 
-	<main class="container mx-auto flex-grow p-4">
+	<main class="container mx-auto flex-grow p-4 text-cyan-200">
 		{@render children()}
 	</main>
 
