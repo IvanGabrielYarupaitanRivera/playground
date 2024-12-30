@@ -1,21 +1,14 @@
 <script lang="ts">
-	import { randomNumber } from './utils';
+	let position = $state({ x: 0, y: 0 });
 
-	let number = $state(randomNumber());
-
-	function handleClick() {
-		number = randomNumber();
+	function onpointermove(event: PointerEvent) {
+		position = {
+			x: event.clientX,
+			y: event.clientY
+		};
 	}
-
-	$inspect(number);
 </script>
 
-{#await number}
-	<p>...Esperando</p>
-{:then number}
-	<p>Número {number}</p>
-{:catch error}
-	<p>{error.message}</p>
-{/await}
-
-<button onclick={handleClick} class="bg-red-700">Número Aleatorio </button>
+<div {onpointermove} class="min-h-screen bg-slate-800">
+	El mouse está en: {position.x} y {position.y}
+</div>
