@@ -1,14 +1,15 @@
 <script lang="ts">
-	let position = $state({ x: 0, y: 0 });
+	import Stepper from './Stepper.svelte';
 
-	function onpointermove(event: PointerEvent) {
-		position = {
-			x: event.clientX,
-			y: event.clientY
-		};
-	}
+	let value = $state(0);
+
+	const backSteps = () => {
+		value--;
+	};
+
+	const nextSteps = () => {
+		value++;
+	};
 </script>
 
-<div {onpointermove} class="min-h-screen bg-slate-800">
-	El mouse está en: {position.x} y {position.y}
-</div>
+<Stepper {backSteps} {nextSteps} {value}></Stepper>
