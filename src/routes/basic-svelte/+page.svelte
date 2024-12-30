@@ -1,14 +1,27 @@
-<script lang="ts">
-	import MensajePersonalizado from './MensajePersonalizado.svelte';
-
-	let source: string =
-		'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTUEFqSVnXsXqQT_qIumH4c2uDciSgHK1PRVA&s';
-	let alternativeText: string = 'imagen de la portada del manga Dungeon ni Deai';
+<script>
+	const colors = ['red', 'green', 'blue'];
+	let selected = $state(colors[0]);
 </script>
 
-<!-- Viendo nuestro componente que hemos creado -->
-<MensajePersonalizado idComponente={1}></MensajePersonalizado>
-<MensajePersonalizado idComponente={2}></MensajePersonalizado>
+<h1
+	class="text-2xl"
+	class:text-red-500={selected === 'red'}
+	class:text-green-500={selected === 'green'}
+	class:text-blue-500={selected === 'blue'}
+>
+	Pick a colour
+</h1>
 
-<!-- Agregamos una imagen con atributos dinámicos -->
-<img src={source} alt={alternativeText} />
+<div class="space-x-2">
+	{#each colors as color, i}
+		<button
+			onclick={() => (selected = color)}
+			class="p-4"
+			class:bg-red-500={color === 'red'}
+			class:bg-green-500={color === 'green'}
+			class:bg-blue-500={color === 'blue'}
+		>
+			{i}
+		</button>
+	{/each}
+</div>
