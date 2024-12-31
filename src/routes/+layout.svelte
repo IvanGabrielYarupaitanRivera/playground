@@ -13,7 +13,7 @@
 		<h1 class="text-center text-4xl font-bold text-cyan-400">Aprendiendo SvelteKit</h1>
 	</header>
 
-	<main class="container mx-auto flex-grow p-4 text-cyan-200">
+	<main class="container mx-auto flex-grow p-4">
 		{@render children()}
 	</main>
 
