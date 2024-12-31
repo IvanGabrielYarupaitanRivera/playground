@@ -5,8 +5,10 @@
 	};
 
 	let pregunta: Pregunta = $state({ id: '', pregunta: '' });
+
 	let respuesta = $state('');
-	const preguntas = [
+
+	const preguntas = $state([
 		{
 			id: 'Pregunta 01',
 			pregunta: '¿Cuál es la capital de Francia?'
@@ -87,7 +89,7 @@
 			id: 'Pregunta 20',
 			pregunta: '¿Cuál es la capital de Cuba?'
 		}
-	];
+	]);
 
 	const enviarRespuesta = () => {
 		alert(`La respuesta a la ${pregunta.id}: ${pregunta.pregunta}  es ${respuesta}`);
