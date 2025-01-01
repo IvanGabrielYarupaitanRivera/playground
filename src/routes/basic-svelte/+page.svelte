@@ -1,16 +1,16 @@
 <script>
-	import Counter from './Counter.svelte';
-	import Counter2 from './Counter2.svelte';
+	import { Spring, Tween } from 'svelte/motion';
 
-	let valor = $state(0);
-	const sumar = () => {
-		valor += 1;
-	};
-	const restar = () => {
-		valor -= 1;
+	let progress1 = new Spring(0);
+	let progress2 = new Tween(0);
+
+	const getRandomNumber = () => {
+		progress1.target = Math.random();
+		progress2.target = Math.random();
 	};
 </script>
 
-<Counter></Counter>
+<button onclick={getRandomNumber}>Random</button>
 
-<Counter2 {sumar} {restar} {valor}></Counter2>
+<progress value={progress1.current}></progress>
+<progress value={progress2.current}></progress>
