@@ -1,13 +1,16 @@
 <script>
-	let altura = $state(10);
-	let ancho = $state(10);
-	let area = $derived(altura * ancho);
+	import Counter from './Counter.svelte';
+	import Counter2 from './Counter2.svelte';
+
+	let valor = $state(0);
+	const sumar = () => {
+		valor += 1;
+	};
+	const restar = () => {
+		valor -= 1;
+	};
 </script>
 
-<input type="range" name="altura" id="altura" bind:value={altura} min="10" max="500" step="1" />
-<input type="range" name="ancho" id="ancho" bind:value={ancho} min="10" max="500" step="1" />
+<Counter></Counter>
 
-<div class="bg-gray-100 p-4" style="height: {altura}px; width: {ancho}px;">{area}</div>
-
-<p>Altura: {altura}</p>
-<p>Ancho: {ancho}</p>
+<Counter2 {sumar} {restar} {valor}></Counter2>
