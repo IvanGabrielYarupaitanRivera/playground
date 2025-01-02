@@ -10,7 +10,7 @@
 </svelte:head>
 
 <div class="flex min-h-screen flex-col">
-	<header class="space-y-4 bg-blue-100 p-4">
+	<header class="space-y-4 bg-blue-300 p-4">
 		<h1 class="text-center text-4xl font-bold text-blue-700">Aprendiendo SvelteKit</h1>
 
 		<nav aria-label="Navegación principal">
@@ -30,7 +30,7 @@
 		{@render children()}
 	</main>
 
-	<footer class="bg-blue-100 p-4">
+	<footer class="bg-blue-300 p-4">
 		<small class="block text-center text-blue-700">
 			© {new Date().getFullYear()} Aprendiendo SvelteKit
 		</small>
